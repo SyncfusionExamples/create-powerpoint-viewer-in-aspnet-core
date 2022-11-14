@@ -49,27 +49,20 @@ namespace PowerPointViewer.Controllers
                     stream = new MemoryStream(bytes);
                 }
             }
-
-            try
+            //Open the PowerPoint presentation using Syncfusion Presentation library
+            using (IPresentation presentation = Presentation.Open(stream))
             {
-                //Open the PowerPoint presentation using Syncfusion Presentation library
-                IPresentation presentation = Presentation.Open(stream);
                 //Convert a PowerPoint presentation as PDF to view the generated PDF file in our Syncfusion PdfViewer
-                PdfDocument pdfDocument = PresentationToPdfConverter.Convert(presentation);
-                stream.Dispose();
-                //Save the converted Pdf document to get a physical DOM of PDF document.
-                stream = new MemoryStream();
-                pdfDocument.Save(stream);
-                //Dispose the pdf and presentation instance.
-                pdfDocument.Dispose();
-                presentation.Dispose();
-                //Reset the pdf stream position.
-                stream.Position = 0;
+                using (PdfDocument pdfDocument = PresentationToPdfConverter.Convert(presentation))
+                {
+                    stream.Dispose();
+                    //Save the converted Pdf document to get a physical DOM of PDF document.
+                    stream = new MemoryStream();
+                    pdfDocument.Save(stream);
+                }
             }
-            catch
-            {
-
-            }
+            //Reset the pdf stream position.
+            stream.Position = 0;
 
             jsonResult = pdfviewer.Load(stream, jsonObject);
             return Content(JsonConvert.SerializeObject(jsonResult));
