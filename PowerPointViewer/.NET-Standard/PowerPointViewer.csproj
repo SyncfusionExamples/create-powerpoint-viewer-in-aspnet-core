@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.EJ2.AspNet.Core" Version="20.2.0.50" />
+    <PackageReference Include="Syncfusion.EJ2.PdfViewer.AspNet.Core.Windows" Version="20.2.0.50" />
+    <PackageReference Include="Syncfusion.PresentationRenderer.Net.Core" Version="20.2.0.50" />
+  </ItemGroup>
+
+</Project>
