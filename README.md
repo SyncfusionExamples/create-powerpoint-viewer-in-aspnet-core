@@ -4,10 +4,13 @@ This repository contains example that illustrates how to view the PowerPoint Pre
 
 
 In PowerPoint viewer, you can achieve the below functionality in the application.
--	Display PowerPoint slides.
--	Download and Print a PDF document.
+- Browse & Open the PowerPoint Presentation (PPTX) files 
+- Thumbnail view  
+- Option to print the entire document or a specific page from the browser 
+- Option to download the PowerPoint file as PDF 
 
-[PowerPointViewer](Images/PowerPointViewer.png)
+!["PowerPoint Viewer in ASP.NET Core](Images/PowerPointViewer.png)
+
 
 
 # Resources
