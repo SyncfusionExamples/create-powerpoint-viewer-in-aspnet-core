@@ -12,7 +12,6 @@ In PowerPoint viewer, you can achieve the below functionality in the application
 !["PowerPoint Viewer in ASP.NET Core](Images/PowerPointViewer.png)
 
 
-
 # Resources
 
 - **Product page:** [Syncfusion PowerPoint Framework](https://www.syncfusion.com/document-processing/powerpoint-framework/net)
