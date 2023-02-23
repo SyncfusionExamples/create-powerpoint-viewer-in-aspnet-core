@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using Syncfusion.EJ2.PdfViewer;
 using Syncfusion.Pdf;
 using Syncfusion.Presentation;
-using Syncfusion.PresentationToPdfConverter;
+using Syncfusion.PresentationRenderer;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace PowerPointViewer.Controllers
@@ -49,20 +49,28 @@ namespace PowerPointViewer.Controllers
                     stream = new MemoryStream(bytes);
                 }
             }
-            //Open the PowerPoint presentation using Syncfusion Presentation library
-            using (IPresentation presentation = Presentation.Open(stream))
+
+            try
             {
-                //Convert a PowerPoint presentation as PDF to view the generated PDF file in our Syncfusion PdfViewer
-                using (PdfDocument pdfDocument = PresentationToPdfConverter.Convert(presentation))
+                //Open the PowerPoint presentation using Syncfusion Presentation library
+                using (IPresentation presentation = Presentation.Open(stream))
                 {
                     stream.Dispose();
-                    //Save the converted Pdf document to get a physical DOM of PDF document.
-                    stream = new MemoryStream();
-                    pdfDocument.Save(stream);
+                    //Convert a PowerPoint presentation as PDF to view the generated PDF file in our Syncfusion PdfViewer
+                    using (PdfDocument pdfDocument = PresentationToPdfConverter.Convert(presentation))
+                    {
+                        //Save the converted Pdf document to get a physical DOM of PDF document.
+                        stream = new MemoryStream();
+                        pdfDocument.Save(stream);
+                        //Reset the pdf stream position.
+                        stream.Position = 0;
+                    }
                 }
             }
-            //Reset the pdf stream position.
-            stream.Position = 0;
+            catch
+            {
+
+            }
 
             jsonResult = pdfviewer.Load(stream, jsonObject);
             return Content(JsonConvert.SerializeObject(jsonResult));

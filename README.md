@@ -7,6 +7,8 @@ In PowerPoint viewer, you can achieve the below functionality in the application
 -	Display PowerPoint slides.
 -	Download and Print a PDF document.
 
+[PowerPointViewer](Images/PowerPointViewer.png)
+
 
 # Resources
 
