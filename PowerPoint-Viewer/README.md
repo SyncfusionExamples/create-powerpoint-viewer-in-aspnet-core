@@ -1,4 +1,4 @@
-# How to run the examples
+# How to run the example
 
 -	Download this project to a location in your disk.
 -	Open the solution file using Visual Studio.
