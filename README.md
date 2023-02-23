@@ -21,7 +21,7 @@ In PowerPoint viewer, you can achieve the below functionality in the application
 # How to run the examples
 
 -	Download this project to a location in your disk.
--	Open the solution file using Visual Studio.
+-	Open the [solution file](https://github.com/SyncfusionExamples/create-powerpoint-viewer-in-aspnet-core/PowerPoint-Viewer/PowerPointViewer.sln) using Visual Studio.
 -	Rebuild the solution to install the required NuGet packages.
 -	Run the application.
 
