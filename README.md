@@ -16,6 +16,7 @@ In PowerPoint viewer, you can achieve the below functionality in the application
 
 - **Product page:** [Syncfusion PowerPoint Framework](https://www.syncfusion.com/document-processing/powerpoint-framework/net)
 - **Documentation:** [Syncfusion PowerPoint library](https://help.syncfusion.com/file-formats/presentation/presentation-to-pdf)
+- **GitHub Examples:** [Syncfusion PowerPoint library examples](https://github.com/SyncfusionExamples/PowerPoint-Examples)
 - **Online demo:** [Syncfusion PowerPoint library - Online demos](https://ej2.syncfusion.com/aspnetcore/PowerPoint/PowerPointViewer#/fluent)
 
 # How to run the examples
